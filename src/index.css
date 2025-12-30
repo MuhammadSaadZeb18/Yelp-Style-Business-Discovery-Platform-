@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+.container {
+  margin: 0 auto;
+  padding: 0rem 4rem;
+  @media (max-width: 600px) {
+    padding: 0rem 2rem;
+  }
+}
+
+/* Hide scrollbar but keep scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
