@@ -12,7 +12,12 @@ const Form = () => {
 
   const sortBy = useSearchStore((s) => s.sortBy);
   const setSortBy = useSearchStore((s) => s.setSortBy);
-const categoriesS = ["All", ...Array.from(new Set(businesses.map((item) => item.category).filter(Boolean)))];
+  const categoriesS = [
+    "All",
+    ...Array.from(
+      new Set(businesses.map((item) => item.category).filter(Boolean))
+    ),
+  ];
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -36,7 +41,9 @@ const categoriesS = ["All", ...Array.from(new Set(businesses.map((item) => item.
           className="w-full px-4 py-2.5 border border-gray-300 rounded-lg outline-none"
         >
           {categoriesS.map((c) => (
-            <option value={c}>{c}</option>
+            <option key={c} value={c}>
+              {c}
+            </option>
           ))}
         </select>
       </div>

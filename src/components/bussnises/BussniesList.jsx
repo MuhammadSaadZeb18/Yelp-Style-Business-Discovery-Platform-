@@ -5,8 +5,7 @@ import Nobussnies from "./Nobussnies";
 import useSearchStore from "../../store/useSearchStore";
 import { fetchBusinesses } from "../../api/fetchBussniese";
 
-const BussniesList = () => {
-  const [data, setData] = useState([]);
+const BussniesList = ({ data, setData }) => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
@@ -53,7 +52,7 @@ const BussniesList = () => {
       ) : (
         <div className="grid my-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.map((bus) => (
-            <Bussnies key={bus.id} {...bus} img={bus.image} />
+            <Bussnies key={Math.random() * 200} {...bus} img={bus.image} />
           ))}
         </div>
       )}
