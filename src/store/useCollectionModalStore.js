@@ -2,8 +2,13 @@ import { create } from "zustand";
 
 const useCollectionModalStore = create((set) => ({
   fav: false,
-  openModal: () => set({ fav: true }),
-  closeModal: () => set({ fav: false }),
+  selectedBusiness: null,
+
+  openModal: (business) =>
+    set({ fav: true, selectedBusiness: business }),
+
+  closeModal: () =>
+    set({ fav: false, selectedBusiness: null }),
 }));
 
 export default useCollectionModalStore;

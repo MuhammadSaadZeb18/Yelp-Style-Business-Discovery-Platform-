@@ -9,7 +9,9 @@ const RecentlyMain = () => {
 
   return (
     <div className="my-[2rem]">
-      <h2 className="text-2xl font-bold mb-[2rem]">Recently Viewed</h2>
+      <div>
+        <h2 className="text-2xl font-bold mb-[2rem]">Recently Viewed</h2>
+      </div>
       <div className="flex overflow-x-auto no-scrollbar gap-[2rem] snap-x">
         {recents.map((r) => (
           <RecentlyViewed
